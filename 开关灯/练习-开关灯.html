@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+
+            margin:150px 500px;
+        }
+
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(document).ready(function(){
+          var inpArr=document.getElementsByTagName("input");
+            var bd=$("body");
+             //js对象转换成jquery对象
+            $(inpArr[0]).click(function(){
+                bd.get(0).style.backgroundColor="#fff";//jquery对象转换成js对象
+            });
+            $(inpArr[1]).click(function(){
+                bd[0].style.backgroundColor="#000";
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="开灯" id="j_openLight"/>
+    <input type="button" value="关灯" id="j_closeLight"/>
+
+    <div>
+        <img src="images/123.jpg"  width="900px" />
+    </div>
+</body>
+</html>

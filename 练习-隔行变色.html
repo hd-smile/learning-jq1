@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+      //1
+//        $(function(){
+//            var jqli=$("li");
+//            for(var i=0;i<jqli.length;i++){
+//                if(i%2===0){
+//                    jqli[i].style.backgroundColor="red";//jquery对象转换为js对象
+//                }else{
+//                    jqli[i].style.backgroundColor="yellow";
+//                }
+//            }
+//        });
+        //2
+        $(function(){
+            var jqli1=$("li:odd");     //基本过滤选择器
+            var jqli2=$("li:even");
+            jqli1.css("background","red");
+            jqli2.css("background","yellow");//隔行变色
+
+            var color="";//计数器
+            //鼠标进入改变变色
+            $("li").mouseenter(function () {
+                color=$(this).css("background");//记录当前颜色
+                $(this).css("background","pink");
+            });
+            //鼠标移开恢复原来颜色
+            $("li").mouseleave(function () {
+                $(this).css("background",color);
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li>乘风破浪会有时，直挂云帆济沧海</li>
+    <li>乘风破浪会有时，直挂云帆济沧海</li>
+    <li>乘风破浪会有时，直挂云帆济沧海</li>
+    <li>乘风破浪会有时，直挂云帆济沧海</li>
+    <li>乘风破浪会有时，直挂云帆济沧海</li>
+    <li>乘风破浪会有时，直挂云帆济沧海</li>
+</ul>
+</body>
+</html>
