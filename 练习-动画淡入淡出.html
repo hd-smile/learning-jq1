@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            display: none;
+            background-color: #54CBA1;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        //淡入
+        $(function () {
+            $("button:eq(0)").click(function () {
+//                $("div").fadeIn();
+//                $("div").fadeIn(3000);//fadeIn（毫秒值）
+//                $("div").fadeIn("slow"); //fadeIn(字符串)  slow慢：600ms   normal正常:400ms   fast快：20
+                $("div").fadeIn(1000,function () {
+                    alert("动画执行完毕！");
+                });//fadeIn(毫秒值，回调函数[显示完毕执行什么]);
+            });
+        });
+        //淡出
+        $(function () {
+            $("button:eq(1)").click(function () {
+//                $("div").fadeOut();
+//                $("div").fadeOut(3000);//fadeOut（毫秒值）
+//                $("div").fadeOut("slow"); //fadeOut(字符串)  slow慢：600ms   normal正常:400ms   fast快：20
+                $("div").fadeOut(1000,function () {
+                    alert("动画执行完毕！");
+                });//fadeOut(毫秒值，回调函数[显示完毕执行什么]);
+            });
+        });
+        //切换
+        $(function () {
+            $("button:eq(2)").click(function () {
+                $("div").fadeToggle(2000);
+            });
+        });
+        //改变透明度
+        $(function () {
+            $("button:eq(3)").click(function () {
+                $("div").fadeTo(1000,0.5);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>切换</button>
+    <button>改透明度为0.5</button>
+    <div></div>
+</body>
+</html>

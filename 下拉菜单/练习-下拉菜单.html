@@ -54,11 +54,11 @@
             var jqli=$(".wrap>ul>li");
 
             jqli.mouseenter(function(){
-               $(this).children("ul").show();//鼠标放在哪个li就让哪个li下的ul显示，用到this,this表示一级li，是让li下边的显示。
+               $(this).children("ul").stop().slideDown(1000);;//鼠标放在哪个li就让哪个li下的ul显示，用到this,this表示一级li，是让li下边的显示。
             });
             //this中对象是js对象，所以用$转换为jquery对象
              jqli.mouseleave(function(){
-               $(this).children("ul").hide();
+               $(this).children("ul").stop().slideUp(1000);
             });
         });
     </script>
