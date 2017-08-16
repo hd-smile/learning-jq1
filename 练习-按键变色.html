@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            text-align: center;
+        }
+
+        .wrap div {
+            width: 400px;
+            height: 300px;
+            background: pink;
+            font-size: 30px;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+
+        $(function () {
+            var div = $("#bgChange");
+            var span = $("#keyCodeSpan");
+            $(document).keyup(function (even) {
+                //alert(e.keyCode);
+                //2.获取值，根据此值，给div和span上色和内容
+                switch (even.keyCode){
+                    case 80:
+                        div.css("background-color","pink");
+                        span.text(even.keyCode);
+                        break;
+                    case 66:
+                        div.css("background-color","blue");
+                        span.text(even.keyCode);
+                        break;
+                    case 79:
+                        div.css("background-color","orange");
+                        span.text(even.keyCode);
+                        break;
+                    case 82:
+                        div.css("background-color","red");
+                        span.text(even.keyCode);
+                        break;
+                    case 89:
+                        div.css("background-color","yellow");
+                        span.text(even.keyCode);
+                        break;
+                    default :
+                        alert("没有设置该颜色！");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <h1>按键改变颜色</h1>
+        <div id="bgChange">
+            keyCode为：
+            <span id="keyCodeSpan">80</span>
+        </div>
+    </div>
+</body>
+</html>

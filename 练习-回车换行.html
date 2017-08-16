@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        //在input中按回车，插入条光标并跳转到下一个input
+        $(function(){
+            $("input").on("keyup", function (even) {
+                if(even.keyCode===13){
+                   // keyCode===13表示按了回车键,如果用table则对应table的keycode值
+                    $(this).next().next().focus();//因为有br所以要多一个next
+                }
+            });
+
+        //鼠标一放，选中内容
+            $("input").on("mouseenter", function (even) {
+                $(this).select();
+            });//能够输入内容的标签才有此功能
+        })
+    </script>
+</head>
+<body>
+    <input type="text" value="明天会更好"/><br>
+    <input type="text" value="明天会更好"/><br>
+    <input type="text" value="明天会更好"/><br>
+    <input type="text" value="明天会更好"/><br>
+    <input type="text" value="明天会更好"/><br>
+</body>
+</html>
